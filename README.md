@@ -17,7 +17,7 @@ This project is a **hand-gesture-based calculator** built with **Streamlit**, **
 
 following libraries must be installed
 
-<pre> ```bash pip install opencv-python mediapipe scikit-learn streamlit matplotlib``` </pre>
+<pre> pip install opencv-python mediapipe scikit-learn streamlit matplotlib </pre>
 
 
 ## 🧠 Features
@@ -41,6 +41,7 @@ following libraries must be installed
 ├── collect_data.py          # Script to collect gesture images
 ├── extract_landmarks.py     # Extracts hand landmark features
 ├── train_model.py           # Trains and saves the ML model
-├── app.py                   # Streamlit app for the calculator
+├── stream.py                   # Streamlit app for the calculator
 └── README.md
+```
 
