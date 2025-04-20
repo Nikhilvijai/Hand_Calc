@@ -32,16 +32,16 @@ following libraries must be installed
 
 ## ⚒ Working
 
-#step 1:
+# step 1:
   - run the collect_data.py to collect the required hand gestures based on our preferences which then is stored in directory "data".
   - these gestures must identify numbers from (0-9),"next function"( to change to operands),"result"(to print the result")
-#step 2:
+# step 2:
   - run create_dataset.py to create the dataset for identifying landmarks of your hand
   - different guestures are overlooked to create the landmarks and coordinated are stored in "data.pickle"
-#step 3:
+# step 3:
   - run train_model.py to train the model
   - the model is stored in "model.p"
-#step 4:
+# step 4:
   - run stream.py to open streamlit
   - you can test your gestures here  
 
