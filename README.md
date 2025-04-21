@@ -7,12 +7,6 @@ This project is a **hand-gesture-based calculator** built with **Streamlit**, **
 
 ---
 
-## 📸 Demo
-
-> Simply show your hand gestures to the camera to input numbers and operators. Perform calculations by making a gesture for "answer".
-
----
-
 ## ⚙ Installation
 
 following libraries must be installed
