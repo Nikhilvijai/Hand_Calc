@@ -31,13 +31,15 @@ following libraries must be installed
   - these gestures must identify numbers from (0-9),"next function"( to change to operands),"result"(to print the result")
 ### step 2:
   - run create_dataset.py to create the dataset for identifying landmarks of your hand
-  - different guestures are overlooked to create the landmarks and coordinated are stored in "data.pickle"
+  - different guestures are overlooked on the data directory to create the landmarks and fetch coordinates
+  - the result is stored in "data.pickle"
 ### step 3:
   - run train_model.py to train the model
-  - the model is stored in "model.p"
+  - the model stored in "model.p"
 ### step 4:
   - run stream.py to open streamlit
-  - you can test your gestures here  
+  - assign labels to your gestures as your wish 
+  - you can test your model here  
 
 ## 📁 Project Structure
 
