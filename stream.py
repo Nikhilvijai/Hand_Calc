@@ -52,7 +52,7 @@ def active():
 
                 
         # load the trained model
-        model_dict = pickle.load(open('./model.p', 'rb'))
+        model_dict = pickle.load(open('model.p', 'rb'))
         model = model_dict['model']
 
 
@@ -184,3 +184,4 @@ def active():
 
 if s:
     active()
+
