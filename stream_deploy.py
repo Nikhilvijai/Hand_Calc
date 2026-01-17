@@ -1,11 +1,10 @@
 import streamlit as st
 import pickle
 import cv2
+import mediapipe as mp
 import numpy as np
 import time
 import re
-
-import mediapipe as mp
 
 st.set_page_config(page_title="Hand Gesture Calculator", layout="centered")
 
@@ -37,12 +36,8 @@ def load_model():
 
 model = load_model()
 
-
-try:
-    mp_hands = mp.solutions.hands
-except AttributeError:
-    from mediapipe.python.solutions import hands as mp_hands
-
+mp_hands = mp.solutions.hands
+mp_drawing = mp.solutions.drawing_utils
 
 hands = mp_hands.Hands(
     static_image_mode=True,
@@ -94,16 +89,16 @@ def calculate_expression(expr):
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("Start"):
+    if st.button("▶ Start"):
         st.session_state.running = True
 
 with col2:
-    if st.button("Reset"):
+    if st.button("🔄 Reset"):
         st.session_state.expression = ""
         st.session_state.running = False
         st.session_state.alt_mode = False
 
-st.markdown(f"### Expression: `{st.session_state.expression}`")
+st.markdown(f"### 🧮 Expression: `{st.session_state.expression}`")
 
 
 camera = st.camera_input("Show your hand gesture")
@@ -142,20 +137,20 @@ if camera is not None and st.session_state.running:
                 st.image(frame, channels="BGR")
                 st.stop()
 
-           
+            
             if not st.session_state.alt_mode:
                 char = default_labels.get(idx, "waiting")
             else:
                 char = alt_labels.get(idx, "waiting")
 
-           
+            
             if char == "next function":
                 st.session_state.alt_mode = True
 
             elif char == "answer":
                 try:
                     result = calculate_expression(st.session_state.expression)
-                    st.success(f"RESULT: {result}")
+                    st.success(f"✅ RESULT: {result}")
                     st.session_state.running = False
                 except Exception:
                     st.error("Invalid Expression")
