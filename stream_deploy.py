@@ -1,11 +1,11 @@
 import streamlit as st
 import pickle
 import cv2
-import mediapipe as mp
 import numpy as np
 import time
 import re
 
+import mediapipe as mp
 
 st.set_page_config(page_title="Hand Gesture Calculator", layout="centered")
 
@@ -38,7 +38,10 @@ def load_model():
 model = load_model()
 
 
-mp_hands = mp.solutions.hands
+try:
+    mp_hands = mp.solutions.hands
+except AttributeError:
+    from mediapipe.python.solutions import hands as mp_hands
 mp_drawing = mp.solutions.drawing_utils
 
 hands = mp_hands.Hands(
