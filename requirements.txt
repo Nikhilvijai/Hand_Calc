@@ -1,6 +1,8 @@
 streamlit
-numpy
+streamlit-webrtc
 opencv-python-headless
+mediapipe
+numpy
 scikit-learn
-mediapipe==0.10.9
-protobuf<4
+av
+
