@@ -42,7 +42,7 @@ try:
     mp_hands = mp.solutions.hands
 except AttributeError:
     from mediapipe.python.solutions import hands as mp_hands
-mp_drawing = mp.solutions.drawing_utils
+
 
 hands = mp_hands.Hands(
     static_image_mode=True,
